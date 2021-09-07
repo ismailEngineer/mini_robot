@@ -1,4 +1,4 @@
-<?xml version="1.0" ?>
+<?xml version="1.0" encoding="utf-8"?>
 <robot name="mini_robot_description" xmlns:xacro="http://www.ros.org/wiki/xacro" >
 
 

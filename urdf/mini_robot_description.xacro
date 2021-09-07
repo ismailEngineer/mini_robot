@@ -7,7 +7,9 @@
 <xacro:include filename="$(find mini_robot_description)/gazebo/mini_robot_description_physics.gazebo" />
 <xacro:include filename="$(find mini_robot_description)/gazebo/mini_robot_description_plugins.gazebo" />
 
-<xacro:include filename="$(find mini_robot_description)/urdf/materials.xacro" />
+<!-- ############# Material ############# -->
+<xacro:include filename="$(find mini_robot_description)/urdf/materials.urdf" />
+
 
 
 <!-- ############# LINKS ############# -->
@@ -44,7 +46,7 @@
       <geometry>
         <mesh filename="package://mini_robot_description/meshes/right_wheel_link.STL" />
       </geometry>
-      <material name="white"/>
+      <material name="black"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
@@ -65,7 +67,7 @@
       <geometry>
         <mesh filename="package://mini_robot_description/meshes/right_wheel_link.STL" />
       </geometry>
-      <material name="white"/>
+      <material name="black"/>
     </visual>
     <collision>
       <origin xyz="0 0 0" rpy="0 0 0" />
@@ -87,7 +89,7 @@
       <geometry>
         <mesh filename="package://mini_robot_description/meshes/lidar.stl" scale="0.001 0.001 0.001"/>
       </geometry>
-      <material name="white"/>
+      <material name="blue"/>
     </visual>
     <collision>
       <origin rpy="0 0 0" xyz="-0.1575 0.0 -0.3"/>

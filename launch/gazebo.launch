@@ -7,6 +7,7 @@
 	<node args="-param robot_description -urdf -model mini_robot_description" name="spawn_urdf" pkg="gazebo_ros" type="spawn_model"/>
 
 	<node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/>
+
 	<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
   
 
@@ -17,5 +18,7 @@
 		<arg name="headless" value="false"/>
 		<arg name="debug" value="false"/>
 	</include>
+
+	<node name="teleop_keyboard" pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" output="screen"/>
 
 </launch>

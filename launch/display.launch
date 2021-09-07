@@ -1,20 +1,12 @@
 <launch>
-  <arg
-    name="model" />
-  <param
-    name="robot_description"
-    textfile="$(find mini_robot_description)/urdf/mini_robot_description.xacro" />
-  <node
-    name="joint_state_publisher_gui"
-    pkg="joint_state_publisher_gui"
-    type="joint_state_publisher_gui" />
-  <node
-    name="robot_state_publisher"
-    pkg="robot_state_publisher"
-    type="robot_state_publisher" />
-  <node
-    name="rviz"
-    pkg="rviz"
-    type="rviz"
-    args="-d $(find mini_robot_description)/rviz/display.rviz" />
+  <arg name="model" default="$(find mini_robot_description)/urdf/mini_robot_description.xacro"/>
+
+  <param command="$(find xacro)/xacro --inorder $(arg model)" name="robot_description"/>
+
+  <node  name="joint_state_publisher_gui"  pkg="joint_state_publisher_gui"  type="joint_state_publisher_gui" />
+
+  <node  name="robot_state_publisher"  pkg="robot_state_publisher"  type="robot_state_publisher" />
+
+  <node  name="rviz"  pkg="rviz"  type="rviz"  args="-d $(find mini_robot_description)/rviz/display.rviz" />
+
 </launch>
