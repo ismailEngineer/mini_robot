@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<robot name="mini_robot_description" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+<xacro:property name="body_color" value="Gazebo/White" />
+<xacro:property name="wheels" value="Gazebo/Black" />
+<xacro:property name="lidar" value="Gazebo/Blue" />
+
+<!-- ############# WHITE COLOR ############# -->
+
+<gazebo reference="base_link">
+  <material>${body_color}</material>
+</gazebo>
+
+<gazebo reference="right_wheel_link">
+  <material>${wheels}</material>
+</gazebo>
+
+<gazebo reference="left_wheel_link">
+  <material>${wheels}</material>
+</gazebo>
+
+<gazebo reference="lidar_link">
+  <material>${lidar}</material>
+</gazebo>
+
+</robot>
+
