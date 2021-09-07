@@ -2,6 +2,8 @@
 
 <launch>
 
+	<arg name="RVIZ" default="false"/>
+
 	<include file="$(find gazebo_ros)/launch/empty_world.launch">
 		<arg name="paused" value="false"/>
 		<arg name="use_sim_time" value="true"/>
@@ -27,5 +29,9 @@
 	<node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>	
 
 	<node name="teleop_keyboard" pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" output="screen"/>
+
+	<group if="$(arg RVIZ)">
+    	<node  name="rviz"  pkg="rviz"  type="rviz"  args="-d $(find mini_robot_description)/rviz/gazebo.rviz" />
+    </group>
 
 </launch>
