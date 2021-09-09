@@ -30,8 +30,11 @@
 
 	<node name="teleop_keyboard" pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" output="screen"/>
 
+	
+	<arg name="rviz_file" default="$(find mini_robot_description)/rviz/gazebo.rviz"/>
+	
 	<group if="$(arg RVIZ)">
-    	<node  name="rviz"  pkg="rviz"  type="rviz"  args="-d $(find mini_robot_description)/rviz/gazebo.rviz" />
+    	<node  name="rviz"  pkg="rviz"  type="rviz"  args="-d $(arg rviz_file)" />
     </group>
 
 </launch>
