@@ -1,0 +1,14 @@
+<?xml version="1.0" ?>
+
+<launch>
+
+	<include file="$(find mini_robot_description)/launch/gazebo.launch">
+		<arg name="RVIZ" value="true"/>
+		<arg name="rviz_file" value="$(find mini_robot_navigation)/rviz/gmapping.rviz"/>
+	</include>
+
+    <arg name="lidar_topic" default="/laser/scan"/>
+
+    <node  name="gmapping"  pkg="gmapping"  type="slam_gmapping"  args="scan:=/laser/scan" />
+
+</launch>
