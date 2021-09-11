@@ -19,7 +19,7 @@
 
   <!-- rviz -->
   <group if="$(arg open_rviz)"> 
-    <node pkg="rviz" type="rviz" name="rviz" required="true" args="-d $(find mini_robot_navigation)/rviz/nav.rviz"/>
+    <node pkg="rviz" type="rviz" name="rviz" required="true" args="-d $(find mini_robot_navigation)/rviz/nav_dwa.rviz"/>
   </group>
   
 </launch>
