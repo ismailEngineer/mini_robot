@@ -115,12 +115,26 @@ catkin_package(
 ## Build ##
 ###########
 
+
+# Set Hearders :
+set(HEADER_DIR include/mini_robot_navigation)
+# Set Sources :
+set(SOURCES src/RobotCommand.cpp src/Navigation.cpp include/mini_robot_navigation/RobotCommand.hpp)
+
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
 include_directories(
 # include
   ${catkin_INCLUDE_DIRS}
+  ${HEADER_DIR}
 )
+
+# Add executable nodes :
+add_executable(navigation ${SOURCES})
+# Add dependecies for build nodes :
+add_dependencies(navigation ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+# Target nodes :
+target_link_libraries(navigation ${catkin_LIBRARIES})
 
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
