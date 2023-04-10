@@ -48,7 +48,7 @@ cd ~/catkin_ws/
 catkin build 
 ```
 
-![Screenshot from 2023-04-10 15-16-22.png](Mini%20robot%203b2c67b3d08d43b0a2497976db25cb59/Screenshot_from_2023-04-10_15-16-22.png)
+![Build.png](../doc/build.png)
 
 ## Launch Gazebo
 
