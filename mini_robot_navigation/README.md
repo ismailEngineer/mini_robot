@@ -48,7 +48,7 @@ cd ~/catkin_ws/
 catkin build 
 ```
 
-![Build.png](doc/build.png)
+![Build.png](../doc/build.png)
 
 ## Launch Gazebo
 
