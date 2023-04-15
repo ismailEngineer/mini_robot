@@ -14,6 +14,8 @@
 
 <!-- ############# LINKS ############# -->
 
+<link name="dummy"></link>
+
   <link name="base_link">
     <inertial>
       <origin xyz="0 0 0" rpy="0 0 0" />
@@ -101,6 +103,11 @@
 
 
 <!-- ############# JOINTS ############# -->
+
+  <joint name="dummy_joint" type="fixed">
+     <parent link="dummy"/>
+     <child link="base_link"/>
+   </joint>
 
   <joint name="right_joint" type="continuous">
     <origin xyz="0 -0.06726 0.01625" rpy="1.5708 0.085809 0" />
