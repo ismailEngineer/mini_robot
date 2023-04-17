@@ -80,6 +80,27 @@
   </link>
 
 
+  <link name="support_lidar">
+    <inertial>
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <mass value="0.26" />
+      <inertia ixx="3.3e-05" ixy="0.0" ixz="0.0" iyy="3.3e-05" iyz="0.0" izz="6e-05"/>
+    </inertial>
+    <visual>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.04"   length="0.02"/>
+      </geometry>
+      <material name="blue"/>
+    </visual>
+    <collision>
+      <origin rpy="0 0 0" xyz="0 0 0"/>
+      <geometry>
+        <cylinder radius="0.04"   length="0.02"/>
+      </geometry>
+    </collision>
+  </link>
+
   <link name="lidar_link">
     <inertial>
       <origin rpy="0 0 0" xyz="-2.3483549826952554e-09 -3.4770506128023716e-07 0.009561590682608923"/>
@@ -127,8 +148,14 @@
     <axis  xyz="0 0 1" />
   </joint>
 
-  <joint name="lidar_joint" type="fixed">
+  <joint name="support_lidar_joint" type="fixed">
     <origin xyz="0 0.0 0.14" rpy="0.0 0.0 0.0" />
+    <parent link="base_link" />
+    <child link="support_lidar" />
+  </joint>
+
+  <joint name="lidar_joint" type="fixed">
+    <origin xyz="0 0.0 0.15" rpy="0.0 0.0 0.0" />
     <parent link="base_link" />
     <child link="lidar_link" />
   </joint>
