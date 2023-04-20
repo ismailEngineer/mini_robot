@@ -56,8 +56,12 @@ catkin build
 roslaunch mini_robot_description gazebo.launch
 ```
 
+![simulation gazebo](../doc/gazebo.png)
+
 ## Launch Navigation
 
 ```bash
 roslaunch mini_robot_navigation navigation.launch
 ```
+
+![robot navigation](../doc/navigation.png)
